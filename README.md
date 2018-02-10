@@ -11,7 +11,7 @@ MIP 的谷歌浏览器扩展插件
 <a id="debug"></a>
 ## 线上代码本地化
 
-把线上的 CDN 代码代理到本地的 `mip server` 中，需要支持：
+把线上的 CDN 路径代理到本地的 `mip server` 中，需要支持：
 
 - `mip.css`
 - `mip.js`
