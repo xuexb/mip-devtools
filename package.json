@@ -1,0 +1,41 @@
+{
+  "name": "mip-devtools",
+  "version": "1.0.0",
+  "description": "MIP 开发者谷歌浏览器扩展插件",
+  "scripts": {
+    "commitmsg": "validate-commit-msg"
+  },
+  "config": {
+    "validate-commit-msg": {
+      "types": [
+        "feat",
+        "fix",
+        "docs",
+        "style",
+        "refactor",
+        "test",
+        "chore",
+        "revert",
+        "release"
+      ]
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xuexb/mip-devtools.git"
+  },
+  "keywords": [
+    "MIP",
+    "chrome"
+  ],
+  "author": "xuexb <fe.xiaowu@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/xuexb/mip-devtools/issues"
+  },
+  "homepage": "https://github.com/xuexb/mip-devtools#readme",
+  "devDependencies": {
+    "husky": "^0.14.3",
+    "validate-commit-msg": "^2.14.0"
+  }
+}
