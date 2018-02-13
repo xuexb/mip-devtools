@@ -23,6 +23,12 @@
 
                     event.preventDefault();
                 });
+
+                $('#close').on('click', () => {
+                    chrome.tabs.query({active: true, currentWindow: true}, tabs => {
+                        chrome.tabs.remove(tabs[0].id);
+                    });
+                });
             });
 
         }
@@ -56,12 +62,14 @@
                     $extensions.val('');
                     event.preventDefault();
                 }
+
             });
 
             $('#local-mip-extensions-list').off('.local').on('click.local', 'code', event => {
                 if (!$all.prop('checked')) {
                     $(event.target).tooltip('dispose').remove();
                 }
+
             });
         },
         distinct(arr) {
