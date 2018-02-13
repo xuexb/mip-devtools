@@ -63,8 +63,6 @@
                     $(event.target).tooltip('dispose').remove();
                 }
             });
-
-            getFilters().tooltip();
         },
         distinct(arr) {
             const list = {};
@@ -81,7 +79,7 @@
                 .filter(v => v.indexOf('mip-') === 0)
                 .map(v => `<code title="点击删除">${v}</code>`);
 
-            $('#local-mip-extensions-list').html(html);
+            $('#local-mip-extensions-list').html(html).find('code').tooltip();
         },
         set(data = {}) {
             const rules = data.rules || [];
