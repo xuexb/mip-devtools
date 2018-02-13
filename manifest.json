@@ -1,0 +1,46 @@
+{
+    "name": "MIP 开发者工具",
+    "version": "1.0",
+    "manifest_version": 2,
+    "author": "xuexb <fe.xiaowu@gmail.com>",
+    "description": "MIP 开发者工具：代码本地化、校验规范、清除缓存、提交链接等功能。",
+    "icons": {
+        "16": "static/img/icon-16.png",
+        "48": "static/img/icon-48.png",
+        "128": "static/img/icon-128.png"
+    },
+
+    "browser_action": {
+        "default_icon": "static/img/icon-16.png",
+        "default_title": "MIP 开发者工具",
+        "default_popup": "template/popup.html"
+    },
+
+    "permissions": [
+        "webRequest",
+        "webRequestBlocking",
+        "tabs",
+        "http://*/*",
+        "https://*/*",
+        "notifications",
+        "storage"
+    ],
+
+    "background": {
+        "persistent": true,
+        "scripts": [
+            "static/js/background.js"
+        ]
+    },
+
+    "web_accessible_resources": [
+        "static/img/icon-16.png",
+        "static/img/icon-48.png",
+        "static/img/icon-128.png",
+        "static/css/*.css",
+        "static/css/*.css.map",
+        "static/js/*.js",
+        "static/js/*.js.map"
+    ],
+    "homepage_url": "https://github.com/xuexb/mip-devtools"
+}

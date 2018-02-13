@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>配置</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0">
+    <link rel="stylesheet" href="../static/css/bootstrap.css">
+    <link rel="stylesheet" href="../static/css/config.css">
+</head>
+<body>
+    <h1>MIP 开发者工具配置</h1>
+    <hr>
+    <form action="?">
+        <fieldset>
+            <legend>本地化配置</legend>
+            <div class="form-group row">
+                <label for="local-all" class="col-sm-2 text-sm-right">全部</label>
+                <div class="col-sm-10">
+                    <input type="checkbox" id="local-all" aria-label="全部">
+                    <small id="local-enabled" class="text-muted">代理全部 MIP 静态资源</small>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="local-mipjs" class="col-sm-2 text-sm-right">mip.js</label>
+                <div class="col-sm-10">
+                    <input type="checkbox" id="local-mipjs" aria-label="mip.js">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="local-mipcss" class="col-sm-2 text-sm-right">mip.css</label>
+                <div class="col-sm-10">
+                    <input type="checkbox" id="local-mipcss" aria-label="mip.css">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="local-host" class="col-sm-2 text-sm-right">本地链接</label>
+                <div class="col-sm-10">
+                    <input type="url" required class="form-control" id="local-host" placeholder="本地启动 mip server 的链接">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="local-mip-extensions" class="col-sm-2 text-sm-right">单个组件</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="local-mip-extensions" placeholder="输入组件名按回车添加">
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-10" id="local-mip-extensions-list"></div>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>清除缓存 - 开发中</legend>
+            <div class="form-group row">
+                <label for="mipcacheall" class="col-sm-2 text-sm-right">全部</label>
+                <div class="col-sm-10">
+                    <input type="checkbox" id="mipcacheall" aria-label="全部" disabled>
+                    <small id="mipcacheall" class="text-muted">清除页面中同域名下所有静态链接</small>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="authkey" class="col-sm-2 text-sm-right">authkey</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="authkey" disabled>
+                </div>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>推送链接 - 开发中</legend>
+            <div class="form-group row">
+                <label for="site" class="col-sm-2 text-sm-right">site</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="site" disabled>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="token" class="col-sm-2 text-sm-right">token</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="token" disabled>
+                </div>
+            </div>
+        </fieldset>
+        <p class="mt-4">
+            <button type="submit" class="btn btn-primary">保存</button>
+        </p>
+    </form>
+    <script src="../static/js/chrome-promise.js"></script>
+    <script src="../static/js/promise-delay.js"></script>
+    <script src="../static/js/jquery.js"></script>
+    <script src="../static/js/bootstrap.bundle.min.js"></script>
+    <script src="../static/js/common.js"></script>
+    <script src="../static/js/config.js"></script>
+    
+</body>
+</html>

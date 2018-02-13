@@ -1,0 +1,34 @@
+body {
+    padding: 20px;
+}
+fieldset {
+    margin-top: 20px;
+    border: 1px solid  #ccc;
+    padding: 10px;
+}
+fieldset:first-child {
+    margin-top: 0;
+}
+legend {
+    display: inline;
+    width: auto;
+    padding: 0 5px;
+}
+code {
+    padding: 0.2em 0.4em;
+    margin: 0;
+    font-size: 85%;
+    background-color: rgba(27,31,35,0.05);
+    border-radius: 3px;
+    margin-right: 10px;
+}
+code:last-child {
+    margin-right: 0;
+}
+fieldset[data-all="false"] code:hover {
+    color: #fff;
+    background-color: rgba(27,31,35, .3);
+}
+fieldset[data-all="false"] code {
+    cursor: pointer;
+}

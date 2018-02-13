@@ -1,0 +1,72 @@
+body {
+    font-size: 14px;
+    -webkit-user-select: none;
+            user-select: none;
+}
+header {
+    padding: 5px 10px;
+    border-bottom: 1px dotted #aaa;
+}
+header span {
+    font-size: 12px;
+    color: #999;
+    margin-left: 5px;
+}
+h1 {
+    color: #522;
+    font-weight: bolder;
+    font-size: 16px; 
+    display: inline-block;
+}
+ul {
+    min-width: 200px;
+    padding: 10px 0;
+    margin: 0;
+    list-style: none;
+}
+.control {
+    padding: 3px 3px 3px 10px;
+    display: block; 
+    color: #555; 
+    text-decoration: none;
+    cursor: pointer;
+    line-height: 24px;
+}
+.control.disabled {
+    color: #ccc; 
+}
+.control:hover {
+    color: #ff3C11;
+    background: #f1f1f1;
+}
+input[type="checkbox"] {
+    margin-right: 6px;
+    vertical-align: 1px;
+}
+footer {
+    border-top: 1px dotted #aaa;
+    font-size: 12px;
+    color: #888;
+    line-height: 26px;
+    height: 26px;
+    padding: 0 10px;
+    display: -webkit-flex;
+    -webkit-justify-content: space-between;
+}
+footer a {
+    color: #888;
+    text-decoration: none;
+}
+footer .settings {
+    cursor: pointer;
+}
+footer a:hover,
+footer .settings:hover {
+    color: #333;
+}
+footer svg {
+    vertical-align: text-bottom;
+    fill: currentColor;
+    display: inline-block;
+    margin-right: 3px;
+}
