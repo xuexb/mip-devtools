@@ -87,6 +87,7 @@
                 .filter(v => v.indexOf('mip-') === 0)
                 .map(v => `<code title="点击删除">${v}</code>`);
 
+            $('#local-mip-extensions-list code').tooltip('dispose').remove();
             $('#local-mip-extensions-list').html(html).find('code').tooltip();
         },
         set(data = {}) {
