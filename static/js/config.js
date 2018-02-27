@@ -55,14 +55,14 @@
             }).trigger('change.local');
 
             $extensions.off('.local').on('keydown.local', event => {
-                if (!(event.metaKey || event.ctrlKey) && event.keyCode === 13 && event.target.value.indexOf('mip-') === 0) {
-                    const list = getFilters().map((i, v) => $(v).text()).get().concat($extensions.val());
-
-                    App.local.setExtensions(list);
-                    $extensions.val('');
+                if (!(event.metaKey || event.ctrlKey) && event.keyCode === 13) {
+                    if (/^mip-.+$/.test(event.target.value)) {
+                        const list = getFilters().map((i, v) => $(v).text()).get().concat($extensions.val());
+                        App.local.setExtensions(list);
+                        $extensions.val('');
+                    }
                     event.preventDefault();
                 }
-
             });
 
             $('#local-mip-extensions-list').off('.local').on('click.local', 'code', event => {
@@ -135,6 +135,7 @@
             };
         }
     };
+      
 
     App.init();
 })();
