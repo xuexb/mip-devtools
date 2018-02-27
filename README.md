@@ -5,10 +5,10 @@ MIP 的谷歌浏览器扩展插件
     - [x] 总开关
     - [ ] 检测本地服务开启状态
 - [ ] [校验规范](#validator)
-- [ ] [MIP 页面检测](#check)
-- [ ] [识别路径](#auto-path)
-- [ ] [清除缓存](#clean)
-- [ ] [提交链接](#push)
+- [x] [MIP 页面检测](#check)
+- [x] [识别路径](#auto-path)
+- [x] [清除缓存](#clean)
+- [x] [提交链接](#push)
 - [ ] 发布打包
     - [ ]  代码压缩
     - [ ]  变量配置
@@ -66,6 +66,13 @@ MIP 的谷歌浏览器扩展插件
             "mip.css",
             "mip-ext"
         ]
+    },
+    "push": {
+        "site": "",
+        "toekn": ""
+    },
+    "cache": {
+        "authkey": ""
     }
 }
 ```
@@ -73,6 +80,10 @@ MIP 的谷歌浏览器扩展插件
 ## 隐私声明
 
 本扩展程序代码全部开源在 [GitHub](https://github.com/xuexb/mip-devtools) ，绝不会存在**盗取用户信息**、**恶意上传用户资料**等行为。
+
+## 感谢
+
+非常感谢 [AMP Chrome Extension](https://github.com/ampproject/amphtml/tree/master/validator/chromeextension)
 
 ## 版本
 

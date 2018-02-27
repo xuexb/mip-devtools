@@ -32,12 +32,13 @@ ul {
     cursor: pointer;
     line-height: 24px;
 }
-.control.disabled {
-    color: #ccc; 
-}
 .control:hover {
     color: #ff3C11;
-    background: #f1f1f1;
+    background-color: #f1f1f1;
+}
+.control.disabled {
+    cursor: default;
+    color: #ccc; 
 }
 input[type="checkbox"] {
     margin-right: 6px;

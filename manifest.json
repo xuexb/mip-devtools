@@ -11,7 +11,7 @@
     },
 
     "browser_action": {
-        "default_icon": "static/img/icon-16.png",
+        "default_icon": "static/img/nomip-icon-48.png",
         "default_title": "MIP 开发者工具",
         "default_popup": "template/popup.html"
     },
@@ -27,20 +27,20 @@
     ],
 
     "background": {
-        "persistent": true,
-        "scripts": [
-            "static/js/background.js"
-        ]
+        "page": "template/background.html"
     },
+    "content_security_policy": "script-src 'self' https://static.xuexb.com; object-src 'self'",
+
+    "content_scripts": [
+        {
+            "js": [ "static/js/content_script.js" ],
+            "matches": [ "<all_urls>" ],
+            "run_at": "document_start"
+        }
+    ],
 
     "web_accessible_resources": [
-        "static/img/icon-16.png",
-        "static/img/icon-48.png",
-        "static/img/icon-128.png",
-        "static/css/*.css",
-        "static/css/*.css.map",
-        "static/js/*.js",
-        "static/js/*.js.map"
+        "static/**/*"
     ],
     "homepage_url": "https://github.com/xuexb/mip-devtools"
 }

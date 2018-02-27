@@ -2,7 +2,10 @@
     const App = {
         init() {
             MIP.config.get().then(config => {
+                console.log(config)
                 App.local.set(config.local);
+                App.cache.set(config.cache);
+                App.push.set(config.push);
 
                 $('form').on('submit', event => {
                     const $button = $(event.target).find('button[type="submit"]');
@@ -10,8 +13,10 @@
                     // 禁用按钮，实现 loading
                     $button.prop('disabled', true).text('保存中...');
 
-                    // 合并本地化数据
+                    // 合并数据
                     $.extend(config.local, App.local.get());
+                    $.extend(config.cache, App.cache.get());
+                    $.extend(config.push, App.push.get());
 
                     MIP.config.set(config).delay(500).then(data => {
                         MIP.notifications({
@@ -31,6 +36,40 @@
                 });
             });
 
+        }
+    };
+
+    /**
+     * 清空缓存配置
+     *
+     * @type {Object}
+     */
+    App.cache = {
+        set(data = {}) {
+            $('#authkey').val(data.authkey);
+        },
+        get() {
+            return {
+                authkey: $('#authkey').val()
+            }
+        }
+    };
+
+    /**
+     * 推送配置
+     *
+     * @type {Object}
+     */
+    App.push = {
+        set(data = {}) {
+            $('#site').val(data.site);
+            $('#token').val(data.token);
+        },
+        get() {
+            return {
+                site: $('#site').val(),
+                token: $('#token').val()
+            };
         }
     };
 

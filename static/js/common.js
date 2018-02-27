@@ -63,27 +63,28 @@
     MIP.config = {
         get() {
             return new Promise(resolve => {
-                if (localStorage['mip-devtools']) {
-                    try {
-                        return resolve(JSON.parse(localStorage['mip-devtools']));
-                    }
-                    catch (e) {}
-                }
-
                 MIP.chrome.storage.sync.get().then(res => {
                     res.local = Object.assign({
                         enabled: false,
                         rules: ['*'],
                         host: 'http://127.0.0.1:8000'
                     }, res.local);
+
+                    res.cache = Object.assign({
+                        authkey: ''
+                    }, res.cache);
+
+                    res.push = Object.assign({
+                        site: '',
+                        token: ''
+                    }, res.push);
+
                     resolve(res);
                 });
             });
         },
         set(data) {
             localStorage['mip-devtools'] = JSON.stringify(data);
-            console.log(chrome.extension.getBackgroundPage().config)
-            chrome.extension.getBackgroundPage().config = data;
             return MIP.chrome.storage.sync.set(data).then(() => data);
         }
     };
